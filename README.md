@@ -70,3 +70,13 @@
 4. Two variables is also common in this comprehension
 
 ### Generator
+1, Generator is created with (... ...), but not [... ...]
+
+### Iterator
+1, We can use isinstance() to check that if this type is Iterator,
+2, List, dic and so on are not Iterator, but generator is, we can use iter() to change the type
+3, Iterator is the data stream, it will caculate the data by transforming, it can be infinite.
+
+## Function Programing
+***
+
