@@ -4,7 +4,7 @@
 ## Basis
 ***
 ### I/O
-1. Using function `input()` to get input, but get the `str`, if want tpye of `int`, need to us int() to transeform the type forcely.  
+1. Using function `input()` to get input, but it can only get the `str`, if want the tpye of `int`, need to use int() to transeform the type forcely.  
 2. Function `input()` can get parameter of type `str` as the prompt of the input.   
 3. Using `print()` to output, furthermore formtted output is tolerable, using `%` to connect the output str and variable.  
 4. Using ` '''... ...''' ` can output the str with many rows.
@@ -33,29 +33,16 @@
 ## Funtion
 ***
 1. Using `def` to express a function, never forget the indentation and `:`
-2. Not like in C, the parameter if function in python don't need the type declare, if you want to inspect the type, using the build-in function `isinstance()`
+2. Not like in C, the parameter of function in python don't need the type declaring, if you want to inspect the type, using the build-in function `isinstance()`
 3. The fuction in python can return not only one result, actually, the not-only-one return depend on a tuple, you can use the number-as-the-return variable to get the return, or use one to get the return tuple
-4. ***Default parameter*** is tolerable, but you need to pay attention to that parameter is also a variable, if you change this parameter in the function, the function transfered next time will remember the change. like `def AddEnd( l = [] ):` and you change the list l in the  function
+4. ***Default parameter*** is tolerable, but you need to pay attention to that parameter is also a variable, if you change this parameter in the function, the function transfered next time will remember the change.
 5. ***Number-alterable parameter*** can be realized by `*`, if you use `def calc(*number):`, that means the function get a tuple, and the length of this tuple can be alterable by your input when transfer the function
 6. To change a list or tuple to be acceptable by number-alterable parameter, us can add a `*` in front of the list or tuple
-7. ***Key-parameter declare***can build a new dic for you automatically, and the `**kw` is necessary to declare it is a key-parameter function, like 
-    ```python
-    def person(name, age, **kw):
-        print('name:', name, ',', 'age:', age, ',', 'other:', kw)
-    ```  
-you can transfer the function like:
-    ```python
-    person('Ansel', 19, gender='male', city='mianyang')   
-    #attention the '=' but not ':'
-    ```
-or:
-    ```python
-    extra = {'gender' : 'male', 'city' : 'mianyang'}
-    sperson('Ansel', 19, **extra)
-    ```
+7. ***Key-parameter declare***can build a new dic for you automatically, and the `**kw` is necessary to declare it is a key-parameter function
 8. Key must be the `str` if you want to operate this dic by key-parameter function.
-9. ***Given-name ker-parameter*** means you must give the keyword-arguement contained the arguement list of the function, not more or less
+9. ***Given-name key-parameter*** means you must give the keyword-arguement contained the arguement list of the function, not more or less
 10. A special sign ` *, ` is necessary in front of the keyeord-only argument to declare that after the sign, here are Given-name ker-parameter, furthermore, after a Number-alterable parameter`*`, `*,` is not needed. 
+11. The order in parameter list must be, integrant, default, number-alterable, Given-name key, key parameter
 
 ## Advanced Features
 ***
@@ -73,10 +60,10 @@ or:
 3. Defaultly, the iteration element is key in dic, if we need values, using `.values()` to get the valuses
 4. If we need to iterate both key and values, us `.items()` to get them.
 5. Type `str` can also be iterated
-6. If we need index-oriented iteration like FOR in C, use `enumerate()` to build a index-value couple, and us two variables, further more, we can also use the `len(` to get a range and use it as the index to loop
+6. If we need index-oriented iteration like FOR in C, use `enumerate()` to build a index-value couple, and us two variables, further more, we can also use the `len()` to get a range and use it as the index to loop
 7. Two variables in python FOR is common, it can iterate the two demension list
 
-### List Comprehensionss
+### List Comprehensions
 1, `a = [x*x for x in range(0, 6)]` is a list comprehension to build a list with the element of power from 0 to 5
 2. If we need more restrictive condition we can use `if`  like `[x*x for x in range(0, 10) if x%2 == 0]`
 3. Two-level loop can also be used in such comprehension
