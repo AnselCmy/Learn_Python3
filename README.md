@@ -64,19 +64,57 @@
 7. Two variables in python FOR is common, it can iterate the two demension list
 
 ### List Comprehensions
-1, `a = [x*x for x in range(0, 6)]` is a list comprehension to build a list with the element of power from 0 to 5
+1. `a = [x*x for x in range(0, 6)]` is a list comprehension to build a list with the element of power from 0 to 5
 2. If we need more restrictive condition we can use `if`  like `[x*x for x in range(0, 10) if x%2 == 0]`
 3. Two-level loop can also be used in such comprehension
 4. Two variables is also common in this comprehension
 
 ### Generator
-1, Generator is created with (... ...), but not [... ...]
+1. Generator is created with (... ...), but not [... ...]
 
 ### Iterator
-1, We can use isinstance() to check that if this type is Iterator,
-2, List, dic and so on are not Iterator, but generator is, we can use iter() to change the type
-3, Iterator is the data stream, it will caculate the data by transforming, it can be infinite.
+1. We can use isinstance() to check that if this type is Iterator,
+2. List, dic and so on are not Iterator, but generator is, we can use iter() to change the type
+3. Iterator is the data stream, it will caculate the data by transforming, it can be infinite.
 
 ## Function Programing
 ***
+### High-Order Function
+1. A variable can point a function, remember not to use the bracket.
+2. Function name is actually a name of variable 
+3. High-order function means a function can accept a function as the argues 
+4. ***Map*** is a fuction can get a function and a Iterable as the argus, and return a Iterator, the Iterator is the result of the Iterable transformed by the function, if we want to use `print()` to print is, use `list()` change the iterator to the iterable
+5. ***Reduce*** is also a function to get a function and a Iterable, but the function in argus list must be a funtion get two arguments, it will return a result by  transforming the function one by one in the Iterable
+6. ***Filter*** will also act on every elements in a list, and by judge the result is true or false to abandon or hold this element
+7. ***Sorted*** can easily sort a list of number, but if you wangt to have more restrictive condition, using the `key=func` , `sorted()` can also get the third arguments as the `reverse=True` to sort reversed
 
+### Return Function
+1. If we don't need to get the result of this function immediately, we can return another function, and use a variable to get it, transform it when we need it
+2. When we return a function, don't forget that the function is never be transformed, it only remember the algorithm, so if we use a varible, it will be dangerous
+
+### Lambda Function
+1. It is just a function expression which can only express some easy fucntion which only has one sentence
+
+### Decorator
+1. We don't want to change the function, but need to add some features, we can use decorator 
+2. If we need to give argument to the decorator, we need to have a more def function in the `log()`
+3. But when we get the `.__name__` of the new `now()` function, the name is wrapper, so we need to copy the attribute of `now()` to the `wrapper()`
+
+### Partial Function
+1. Partial function can fix some argument
+
+## Module
+***
+
+
+## OOP
+***
+
+### Class & Object
+1. After the name of calss is the inherit class, usually we use `object`
+2. A function `__init__(self, ... ...)` is necessary to build a new object of a calss
+3. Every function must have the `self` to be the first argument
+
+
+### Visit Restriction
+1. If we want such data in class is private, we need to add`__` in front of the data, so, the function out of the class can't change and get the data diretely, only in-class function can do those
