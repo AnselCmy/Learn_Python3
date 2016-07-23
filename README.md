@@ -115,6 +115,41 @@
 2. A function `__init__(self, ... ...)` is necessary to build a new object of a calss
 3. Every function must have the `self` to be the first argument
 
-
 ### Visit Restriction
 1. If we want such data in class is private, we need to add`__` in front of the data, so, the function out of the class can't change and get the data diretely, only in-class function can do those
+
+### Poly & Inher
+1. Inheritance means you can use the function in the ***base calss***
+2. Polymorphism means you can redeclare the function in the subclass, but not like c++, we don't need to declare it is a virtual, and even a class which has a function has the same name, we can use the polymorphism.
+
+### Get Info
+1. We can use `type()` to get the type of a variable
+2. A module 'Types' can judge the function
+3. `isinstance()` is function can judge the type
+4. We can use the 'dir()' to get the ***method*** and the ***attribute***, 
+5. Method and attribute like `__xxx__` are special, like `__len__` in str type, can transformed by `len(str)` or `str.__len__()`
+6. `getattr()`, `setattr()`, `hasattr()` can operate the method and attribute, the first argu is a object, and the seconde is the attribute, remember use the type str to express the attribute.
+
+### Attribute in Class and Object
+1. As a dynamic language, we can bind a new attribute out of the class for a object, that means we bind a attribute for a object but not a class
+2. If we bind a attibute in a class, that means every object of the class has the attribute
+
+
+## Advanced OOP
+***
+### __slots__
+1. Dynamic language agree that a object can bind a attribute, but if we want to restrict that, using `__slots__ = ('xxx', 'xxx')`, only name in this tuple can be binded
+
+### @property
+1. For some safety problems, we usually don't want the attribute can be exposed outside the class, like sometimed we need to check the aruguments, so, we use the build-in decorater @property
+2. If we want this attribute is read-only, we can only have `@property` but not `xxx.setter`
+
+### Mixin
+
+### Custom-made Class
+1. When we print a class name, we can use `__str__(self):` to rewrite the words we want, when we print it
+2. If we want use a class in a FOR loop, we need `__iter__()` and `__next__()`, `__iter__()` will return a Iterable object, the FOR loop in python will transform the `__next__()` in the Iterable object while it occur the StopIteration
+3. `__getitem__()` can make class like a list, using the index to get the item.
+4. `__call__()` is a function will be transformed which when you transform the objet itself
+
+### Enum
