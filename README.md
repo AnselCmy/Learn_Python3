@@ -153,3 +153,12 @@
 4. `__call__()` is a function will be transformed which when you transform the objet itself
 
 ### Enum
+
+## Error
+***
+### Error
+1. Using `try...except...finally` to find the problems in codes, and we can also use `logging.exception()` to make this run after print the error
+2. `raise xxxError()` to raise a error 
+
+### Debug
+
